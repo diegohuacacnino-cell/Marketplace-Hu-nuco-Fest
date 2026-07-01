@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HuánucoFest | Conecta, Organiza, Confía</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN COMPLETA -->
+    <header class="navbar">
+        <div class="logo-container">
+            <!-- Icono de calendario y logo -->
+            <h2 class="logo-text">📅 Huánuco<span>Fest</span></h2>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#como-funciona">¿Cómo Funciona?</a></li>
+                <li><a href="#categorias">Categorías</a></li>
+                <li><a href="#confianza">Seguridad</a></li>
+            </ul>
+        </nav>
+        <div class="nav-buttons">
+            <a href="#proveedores" class="btn-outline">Soy Proveedor</a>
+            <button type="button" id="openQuoteBtn" class="btn-primary">Empezar a Cotizar</button>
+        </div>
+    </header>
+
+    <!-- SECCIÓN HERO CON BÚSQUEDA -->
+    <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Tu evento perfecto, sin el estrés de siempre.</h1>
+            <p>El primer marketplace de Huánuco, Amarilis y Pillco Marca. Conecta con proveedores verificados y asegura tu dinero con nuestro sistema escrow.</p>
+            
+            <!-- Barra de búsqueda rápida -->
+            <div class="search-bar">
+                <input type="text" placeholder="¿Qué necesitas? (Ej. DJ, Catering, Local...)">
+                <button class="btn-search">Buscar Proveedor</button>
+            </div>
+
+            <div id="quotePanel" class="quote-panel" hidden>
+                <h3>Solicita tu cotización rápida</h3>
+                <form id="quoteForm">
+                    <div class="quote-grid">
+                        <div class="quote-field">
+                            <label for="eventType">Tipo de evento</label>
+                            <select id="eventType" name="eventType">
+                                <option>Boda</option>
+                                <option>Cumpleaños</option>
+                                <option>Empresarial</option>
+                                <option>Graduación</option>
+                                <option>Otro</option>
+                            </select>
+                        </div>
+                        <div class="quote-field">
+                            <label for="guests">Número de personas</label>
+                            <input type="number" id="guests" name="guests" min="1" placeholder="Ej. 80">
+                        </div>
+                        <div class="quote-field">
+                            <label for="date">Fecha del evento</label>
+                            <input type="date" id="date" name="date">
+                        </div>
+                        <div class="quote-field">
+                            <label for="budget">Presupuesto estimado</label>
+                            <input type="text" id="budget" name="budget" placeholder="Ej. S/ 3000">
+                        </div>
+                    </div>
+
+                    <div class="quote-field quote-services">
+                        <label>Servicios que necesitas</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="services" value="Catering"> Catering</label>
+                            <label><input type="checkbox" name="services" value="Música"> Música</label>
+                            <label><input type="checkbox" name="services" value="Decoración"> Decoración</label>
+                            <label><input type="checkbox" name="services" value="Local"> Local</label>
+                        </div>
+                    </div>
+
+                    <div class="quote-field">
+                        <label for="details">Detalles adicionales</label>
+                        <textarea id="details" name="details" rows="3" placeholder="Cuéntanos brevemente lo que necesitas..."></textarea>
+                    </div>
+
+                    <div class="quote-actions">
+                        <button type="submit" class="btn-search">Enviar cotización</button>
+                        <p id="quoteMessage" class="quote-message"></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CÓMO FUNCIONA (LOS 3 PASOS DEL BOCETO) -->
+    <section id="como-funciona" class="steps-section">
+        <h2>Organizar nunca fue tan fácil</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Busca y Compara</h3>
+                <p>Explora perfiles verificados con DNI/RUC y lee reseñas reales.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Cotiza Rápido</h3>
+                <p>Contacta directamente por la plataforma y acuerda los detalles.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Reserva Seguro</h3>
+                <p>Paga con Yape, Plin o tarjeta. El dinero se libera al proveedor solo cuando confirma el servicio.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CATEGORÍAS (CATÁLOGO EXPANDIDO) -->
+    <section id="categorias" class="categories-section">
+        <h2>Explora nuestras categorías</h2>
+        <div class="grid-container">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=800&q=80" alt="Servicio de Catering">
+                <h3>Catering y Buffet</h3>
+                <p>Bocaditos, almuerzos y cenas.</p>
+                <a href="#" class="link-card">Ver Proveedores &rarr;</a>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=800&q=80" alt="Música en Vivo">
+                <h3>Bandas y Orquestas</h3>
+                <p>Agrupaciones de bronces y percusión.</p>
+                <a href="#" class="link-card">Ver Proveedores &rarr;</a>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&q=80" alt="DJ y Sonido">
+                <h3>DJ y Sonido Pro</h3>
+                <p>Iluminación y equipos de alta fidelidad.</p>
+                <a href="#" class="link-card">Ver Proveedores &rarr;</a>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80" alt="Salones de Recepción">
+                <h3>Locales y Salones</h3>
+                <p>Espacios para bodas y fiestas universitarias.</p>
+                <a href="#" class="link-card">Ver Proveedores &rarr;</a>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Decoración">
+                <h3>Decoración Temática</h3>
+                <p>Arreglos florales y escenografía.</p>
+                <a href="#" class="link-card">Ver Proveedores &rarr;</a>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80" alt="Fotografía">
+                <h3>Fotografía y Video</h3>
+                <p>Captura los mejores momentos en HD.</p>
+                <a href="#" class="link-card">Ver Proveedores &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE TESTIMONIOS (PRUEBA SOCIAL) -->
+    <section class="testimonials">
+        <h2>Lo que dicen nuestros usuarios</h2>
+        <div class="testimo-grid">
+            <div class="testimo-card">
+                <p class="stars">⭐⭐⭐⭐⭐</p>
+                <p>"Contratamos a la Banda Los Caballeros de Tomayquichua para nuestro evento de facultad y fue increíble. Pagar por la plataforma nos dio mucha tranquilidad."</p>
+                <h4>- Comité Organizador, UDH</h4>
+            </div>
+            <div class="testimo-card">
+                <p class="stars">⭐⭐⭐⭐⭐</p>
+                <p>"Antes me daba miedo que el catering no llegara. Con el pago retenido de HuánucoFest, el proveedor cumplió puntual y con calidad."</p>
+                <h4>- Familia Mendoza, Amarilis</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER EXPANDIDO Y PAGO SEGURO -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="logo-text-footer">Huánuco<span>Fest</span></h2>
+                <p class="slogan">Conecta, Organiza, Confía.</p>
+                <p>El marketplace de eventos más seguro de la región.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Reembolsos</a></li>
+                    <li><a href="#">Soporte y Ayuda</a></li>
+                    <li><a href="#">Trabaja con nosotros</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-security">
+                <h3>Pago 100% Seguro</h3>
+                <p>Tus transacciones están protegidas. Retenemos el pago hasta que el servicio se cumpla.</p>
+                <div class="payment-methods">
+                    <span class="pay-badge yape">Yape</span>
+                    <span class="pay-badge plin">Plin</span>
+                    <span class="pay-badge visa">Visa</span>
+                    <span class="pay-badge mc">MasterCard</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 HuánucoFest. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+<script>
+    const openQuoteBtn = document.getElementById('openQuoteBtn');
+    const quotePanel = document.getElementById('quotePanel');
+    const quoteForm = document.getElementById('quoteForm');
+    const quoteMessage = document.getElementById('quoteMessage');
+
+    if (openQuoteBtn && quotePanel) {
+        openQuoteBtn.addEventListener('click', () => {
+            quotePanel.hidden = !quotePanel.hidden;
+            if (!quotePanel.hidden) {
+                quotePanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    }
+
+    if (quoteForm && quoteMessage) {
+        quoteForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            quoteMessage.textContent = '¡Cotización enviada! Un asesor se contactará contigo pronto.';
+            quoteForm.reset();
+        });
+    }
+</script>
+</body>
+</html>
